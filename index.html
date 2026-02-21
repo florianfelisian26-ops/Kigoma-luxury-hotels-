@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kigoma Luxury Hotel</title>
+
+<style>
+:root{
+--primary:#0f172a;
+--accent:#e63946;
+--light:#ffffff;
+--dark:#0b0f19;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--light);
+color:#333;
+transition:0.4s;
+}
+
+.dark{
+background:var(--dark);
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:var(--primary);
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav ul{
+display:flex;
+gap:15px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:var(--accent);
+}
+
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+text-align:center;
+animation:fade 2s ease-in;
+}
+
+.hero h1{
+font-size:42px;
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:10px;
+}
+
+.btn{
+padding:12px 25px;
+background:var(--accent);
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+text-decoration:none;
+}
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+/* ===== SERVICE CARD ANIMATION ===== */
+
+.card{
+background:#f4f4f4;
+width:260px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.6s ease;
+overflow:hidden;
+transform:translateY(70px);
+opacity:0;
+}
+
+.dark .card{
+background:#1c1c1c;
+}
+
+.card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.card h3, .card p{
+padding:10px;
+}
+
+footer{
+background:var(--primary);
+color:white;
+padding:20px;
+text-align:center;
+}
+
+input, textarea{
+width:80%;
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.toggle, .lang{
+cursor:pointer;
+background:var(--accent);
+padding:5px 10px;
+border-radius:5px;
+margin-left:5px;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Kigoma Luxury Hotel</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#rooms">Rooms</a></li>
+<li><a href="#food">Food</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#privacy">Privacy</a></li>
+</ul>
+<div>
+<span class="toggle" onclick="toggleDark()">Dark</span>
+<span class="lang" onclick="changeLang()">🌍</span>
+</div>
+</nav>
+
+<div class="hero" id="home">
+<h1 id="mainTitle">Welcome to Kigoma Luxury Hotel</h1>
+<br>
+<a class="btn" href="https://wa.me/255787504216">Book via WhatsApp</a>
+</div>
+
+<!-- SERVICES WITH ANIMATED PHOTOS -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+<h3>Luxury Accommodation</h3>
+<p>Clean, secure and modern rooms.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+<h3>Restaurant</h3>
+<p>High quality meals and drinks.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+<h3>Conference Hall</h3>
+<p>Professional meeting environment.</p>
+</div>
+
+</div>
+</section>
+
+<!-- SECTIONS ZINGINE ZIMEBAKI KAMA ZILIVYO -->
+
+<section id="rooms">
+<h2>Room Prices</h2>
+<div class="grid">
+<div class="card">
+<h3>Standard Room</h3>
+<p>30,000 TZS per night</p>
+</div>
+<div class="card">
+<h3>Deluxe Room</h3>
+<p>60,000 TZS per night</p>
+</div>
+<div class="card">
+<h3>VIP Suite</h3>
+<p>120,000 TZS per night</p>
+</div>
+</div>
+</section>
+
+<section id="food">
+<h2>Food Menu</h2>
+<div class="grid">
+<div class="card">
+<h3>Local Dishes</h3>
+<p>From 5,000 TZS</p>
+</div>
+<div class="card">
+<h3>Seafood & Special Meals</h3>
+<p>Up to 50,000 TZS</p>
+</div>
+</div>
+</section>
+
+<section id="reviews">
+<h2>Customer Reviews</h2>
+<div class="grid">
+<div class="card">
+<p>"Best service in Kigoma Town!"</p>
+<strong>- John</strong>
+</div>
+<div class="card">
+<p>"Clean rooms and delicious food."</p>
+<strong>- Amina</strong>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<form action="mailto:your@email.com" method="post" enctype="text/plain">
+<input type="text" name="Name" placeholder="Your Name" required><br>
+<input type="email" name="Email" placeholder="Your Email" required><br>
+<textarea name="Message" placeholder="What service do you need?" required></textarea><br>
+<button class="btn" type="submit">Send Email</button>
+</form>
+
+<br>
+<a class="btn" href="https://wa.me/255787504216">Chat WhatsApp</a>
+
+<p>Location: KIGOMA TOWN, Tanzania</p>
+
+<p>
+<a href="#">Facebook</a> |
+<a href="#">Instagram</a> |
+<a href="#">TikTok</a>
+</p>
+
+</section>
+
+<section id="privacy">
+<h2>Privacy Policy</h2>
+<p>We protect your personal information and ensure secure bookings.</p>
+</section>
+
+<footer>
+<p>© 2026 Kigoma Luxury Hotel</p>
+<p>Made by Florian Mwombeki</p>
+</footer>
+
+<script>
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+let lang=false;
+function changeLang(){
+if(!lang){
+document.getElementById("mainTitle").innerText="Karibu Kigoma Luxury Hotel";
+lang=true;
+}else{
+document.getElementById("mainTitle").innerText="Welcome to Kigoma Luxury Hotel";
+lang=false;
+}
+}
+
+/* Scroll Animation */
+let cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+cards.forEach(card=>{
+let position=card.getBoundingClientRect().top;
+if(position < window.innerHeight-100){
+card.classList.add("show");
+}
+});
+});
+</script>
+
+</body>
+</html>
